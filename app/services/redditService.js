@@ -1,7 +1,6 @@
 app.service('redditService', function($q, $http, $rootScope){
 	var thisService = this;
 	this.redditListToInternal = function(redditData){
-		console.log(redditData)
 		return redditData.data.data.children.map(function (item){
 			return {
 				title: item.data.title,

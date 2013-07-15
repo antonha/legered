@@ -1,10 +1,10 @@
 <div>
-	<div>
-		<div class="row" ng-repeat="item in listing">
-			<div class="large-4 small-4 columns">
-				<img src="{{item.thumbnail}}"></img>
+	<div ui-keypress="keyPress()">
+		<div class="item row" ng-repeat="item in listing" ng-class="{selected: $index == selectedIndex}">
+			<div class="thumbnail large-2 small-2 columns">
+				<img width="100%" src="{{item.thumbnail}}"></img>
 			</div>
-			<div class="large-8 small-8 columns">
+			<div class="title large-10 small-10 columns">
 				<a href="{{item.link}}">{{item.title}}</a>
 			</div>
 		</div>
