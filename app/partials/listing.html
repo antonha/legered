@@ -1,5 +1,6 @@
 <div>
-	<div ui-keypress="keyPress()">
+	<keypress></keypress>
+	<div ui-keydown="{'enter':'keyPress($event)'}">
 		<div class="item row" ng-repeat="item in listing" ng-class="{selected: $index == selectedIndex}">
 			<div class="thumbnail large-2 small-2 columns">
 				<img width="100%" src="{{item.thumbnail}}"></img>

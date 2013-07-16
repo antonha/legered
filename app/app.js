@@ -1,4 +1,4 @@
-app = angular.module('legered', ['ui']);
+app = angular.module('legered', []);
 app.config(function ($routeProvider){
 	$routeProvider.when('/', {
 		controller: 'ListTopController',
