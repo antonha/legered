@@ -1,13 +1,17 @@
 <div>
-	<keypress></keypress>
-	<div ui-keydown="{'enter':'keyPress($event)'}">
-		<div class="item row" ng-repeat="item in listing" ng-class="{selected: $index == selectedIndex}">
-			<div class="thumbnail large-2 small-2 columns">
-				<img width="100%" src="{{item.thumbnail}}"></img>
-			</div>
-			<div class="title large-10 small-10 columns">
-				<a href="{{item.link}}">{{item.title}}</a>
-			</div>
-		</div>
-	</div>
+  <keypress></keypress>
+  <div ui-keydown="{'enter':'keyPress($event)'}">
+    <div class="item row" ng-repeat="item in listing" ng-class="{selected: $index == selectedIndex}">
+      <div class="thumbnail large-2 small-2 columns">
+        <img width="100%" src="{{item.thumbnail}}"></img>
+      </div>
+      <div class="title large-10 small-10 columns">
+        <span>
+          <a href="{{item.link}}">
+            {{item.title}}
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
 </div>
