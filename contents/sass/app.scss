@@ -54,19 +54,29 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
 
-
 .item{
   min-height: 50px;
-  padding: 15px 0;
-  background-color: $base3;
+  padding: 5px 0;
+  border:{
+    right: {
+      color: $base00;
+      style: solid;
+      width: 2px;
+    }
+    left: {
+      color: $base00;
+      style: solid;
+      width: 2px;
+    }
+  };
 }
 
 .item.selected{
-	background-color:$green;
+  background-color: $base2;
 }
 
 .title span{
-  font-size: 1.7em;
+  font-size: 1.5em;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
@@ -77,4 +87,12 @@
 
 .item.selected .title span a{
   color: $base01;
+}
+
+.item .contents{
+  display: none;
+}
+
+.item.selected .contents{
+  display: block;
 }
