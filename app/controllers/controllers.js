@@ -2,14 +2,13 @@ app.controller('ListTopController', function($scope, redditService, $document){
     init();
     function init(){
         $scope.selectedIndex = 0;
-        $scope.listing = redditService.getHomeHot();
+        $scope.listing = redditService.getHomeHot(50);
         $scope.keyPressed = function(e){
             var changeSelected = function(diff){
                 $scope.selectedIndex += diff;
                 if($scope.selectedIndex < 0){
                     $scope.selectedIndex = 0;
                 }
-                document.getElementById('item-' + $scope.selectedIndex ).scrollTop = 0;
             }
             if(e.ctrlKey === true &&
                e.originalEvent.keyIdentifier === "U+004A"){
