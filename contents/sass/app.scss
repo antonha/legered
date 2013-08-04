@@ -54,7 +54,7 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
 
-.item{
+.item > div{
   min-height: 50px;
   padding: 5px 0;
   border:{
@@ -71,28 +71,26 @@
   };
 }
 
-.item.selected{
+.item.selected > div{
   background-color: $base2;
 }
 
-.title span{
+.item .title span{
   font-size: 1.5em;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-
 .item .title span a{
   color: $base00;
+}
+.item .thumbnail{
+  padding-right: 0;
 }
 
 .item.selected .title span a{
   color: $base01;
 }
 
-.item .contents{
-  display: none;
-}
-
-.item.selected .contents{
+.item.selected .content{
   display: block;
 }

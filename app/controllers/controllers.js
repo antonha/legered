@@ -3,19 +3,19 @@ app.controller('ListTopController', function($scope, redditService, $document){
     function init(){
         $scope.selectedIndex = 0;
         $scope.listing = redditService.getHomeHot(50);
+        $scope.setSelectedIndex = function(val){
+            $scope.selectedIndex=  val >= 0? val: 0;
+        }
         $scope.keyPressed = function(e){
-            var changeSelected = function(diff){
-                $scope.selectedIndex += diff;
-                if($scope.selectedIndex < 0){
-                    $scope.selectedIndex = 0;
-                }
+            var increaseSelected = function(diff){
+                $scope.setSelectedIndex($scope.selectedIndex + diff);
             }
             if(e.ctrlKey === true &&
                e.originalEvent.keyIdentifier === "U+004A"){
-                changeSelected(1);
+                increaseSelected(1);
             }
             else if(e.ctrlKey === true && e.originalEvent.keyIdentifier === "U+004B"){
-                changeSelected(-1);
+                increaseSelected(-1);
             }
         };
     }
