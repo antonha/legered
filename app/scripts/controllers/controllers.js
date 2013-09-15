@@ -1,4 +1,4 @@
-app.controller('ListTopController', function($scope, redditService, $document){
+app.controller('ListTopController', function($scope, redditService){
     init();
     function init(){
         $scope.selectedIndex = 0;

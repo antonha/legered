@@ -6,7 +6,6 @@ app.directive('keypress', function() {
     link:    function postLink(scope, iElement, iAttrs){
       jQuery(document).on('keypress', function(e){
           e.preventDefault();
-          console.log(scope);
           scope.$apply(scope.keyPressed(e));
        });
     }
