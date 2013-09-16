@@ -54,24 +54,18 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
 
-.item > div{
+.item {
   min-height: 50px;
-  padding: 5px 0;
   border:{
-    right: {
-      color: $base00;
+    bottom: {
+      color: $red;
       style: solid;
-      width: 2px;
-    }
-    left: {
-      color: $base00;
-      style: solid;
-      width: 2px;
+      width: 1px;
     }
   };
 }
 
-.item.selected > div{
+.item.selected{
   background-color: $base2;
 }
 

@@ -270,7 +270,14 @@ module.exports = function (grunt) {
             'bower_components/**/*',
             'images/{,*/}*.{gif,webp}',
             'styles/fonts/*'
-          ]
+          ],
+          rename: function (dest, src) {
+                    var path = require('path');
+                    if (src === 'distpackage.json') {
+                        return path.join(dest, 'package.json');
+                    }
+                    return path.join(dest, src);
+                }
         }, {
           expand: true,
           cwd: '.tmp/images',

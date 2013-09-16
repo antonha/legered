@@ -10,6 +10,9 @@ app.service('imgContentService', function(){
 });
 app.service('imgurContentService', function($http){
 	this.getContent = function(contentParams){
+			if(contentParams.url.match(/.*\.(png|jpg|jpeg|bmp|gif)/g)){
+				return {}
+			}
 	  		if(contentParams.url.match(/.*imgur\.com.*/g)){
                 var hash = contentParams.url.match(/[a-zA-Z0-9]*$/g)[0]
                 if(contentParams.url.match(/\.com\/a\//g)){
@@ -51,4 +54,11 @@ app.service('youtubeContentService', function(){
     	}
     }
 });
+app.service('redditSelfContentService', function(){
+	this.getContent = function(contentParams){
+		if(contentParams.url.match(/reddit\.com\/r\//g)){
+			
+		}
+	}
+})
 

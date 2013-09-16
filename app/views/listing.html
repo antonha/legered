@@ -1,8 +1,8 @@
 <div>
   <keypress></keypress>
-  <div class="listing" ui-keydown="{'enter':'keyPress($event)'}">
+  <div class="row listing" ui-keydown="{'enter':'keyPress($event)'}">
     <div id="{{'item-' + $index}}"
-         class="item"
+         class="row item"
          ng-repeat="item in listing"
          ng-click="setSelectedIndex($index)"
          ng-class="{selected: $index==selectedIndex}">
