@@ -10,12 +10,13 @@ app.service('imgContentService', function(){
 });
 app.service('imgurContentService', function($http){
 	this.getContent = function(contentParams){
-			if(contentParams.url.match(/.*\.(png|jpg|jpeg|bmp|gif)/g)){
+			if(contentParams.url.match(/\.(png|jpg|jpeg|bmp|gif)/g)){
 				return {}
 			}
-	  		if(contentParams.url.match(/.*imgur\.com.*/g)){
+	  		if(contentParams.url.match(/imgur\.com/g)){
                 var hash = contentParams.url.match(/[a-zA-Z0-9]*$/g)[0]
                 if(contentParams.url.match(/\.com\/a\//g)){
+                	console.log("IGUR ALBUM")
                     return {imgs: $http({
                         method: 'GET',
                         url: 'https://api.imgur.com/3/album/' + hash + '/images',
@@ -46,8 +47,13 @@ app.service('imgurContentService', function($http){
 app.service('youtubeContentService', function(){
     this.getContent= function(contentParams){
     	if(contentParams.url.match(/youtube\.com/g)){
-            var hash = /v=([a-zA-Z0-9\-]*)/g.exec(contentParams.url)[1]
-            return {youtube: {url: 'http://youtube.com/embed/' + hash}}
+            var hash = /v=([a-zA-Z0-9\-]*)/g.exec(contentParams.url)
+		if(hash){
+            		return {youtube: {url: 'http://youtube.com/embed/' + hash}}
+		}
+		else{
+			return {}
+		}
     	}
     	else{
     		return {}
